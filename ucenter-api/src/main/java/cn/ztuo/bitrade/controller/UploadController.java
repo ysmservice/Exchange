@@ -26,6 +26,8 @@ import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import org.springframework.util.Assert;
+import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import cn.ztuo.bitrade.util.UploadFileUtil;
 
 @Controller
 @Slf4j
