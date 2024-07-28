@@ -20,7 +20,7 @@ public class GoogleDriveConfig {
 
     @Bean
     public Drive googleDriveService() throws IOException {
-        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("path/to/credentials.json"))
+        GoogleCredentials credentials = GoogleCredentials.fromStream(new FileInputStream("./credentials.json"))
                 .createScoped(Collections.singleton(DriveScopes.DRIVE_FILE));
         return new Drive.Builder(new NetHttpTransport(), JacksonFactory.getDefaultInstance(),
                 new HttpCredentialsAdapter(credentials))
