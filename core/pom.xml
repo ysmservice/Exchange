@@ -104,7 +104,7 @@
 			<groupId>com.sparkframework</groupId>
 			<artifactId>spark-core</artifactId>
 			<scope>system</scope>
-			<systemPath>jar/spark-core-2.6.0.jar</systemPath>
+			<systemPath>${project.basedir}/jar/spark-core-2.6.0.jar</systemPath>
 		</dependency>
 		<dependency>
 			<groupId>org.projectlombok</groupId>
@@ -129,7 +129,7 @@
 			<groupId>commons-fileupload</groupId>
 			<artifactId>commons-fileupload</artifactId>
 		</dependency>
-		<!---QueryDSL开始 -->
+		<!---QueryDSL$5F00始 -->
 		<dependency>
 			<groupId>com.querydsl</groupId>
 			<artifactId>querydsl-apt</artifactId>
@@ -146,8 +146,8 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-		<!---QueryDSL结束 -->
-		<!--easypoi开始 -->
+		<!---QueryDSL$7ED3束 -->
+		<!--easypoi$5F00始 -->
 		<dependency>
 			<groupId>cn.afterturn</groupId>
 			<artifactId>easypoi-base</artifactId>
@@ -163,7 +163,7 @@
 			<artifactId>easypoi-annotation</artifactId>
 			<version>3.0.3</version>
 		</dependency>
-		<!--easypoi结束 -->
+		<!--easypoi$7ED3束 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-configuration-processor</artifactId>
@@ -180,7 +180,7 @@
 			<artifactId>shiro-ehcache</artifactId>
 			<version>1.2.2</version>
 		</dependency>
-		<!-- swagger2 结束 -->
+		<!-- swagger2 $7ED3束 -->
 		<!-- https://mvnrepository.com/artifact/commons-httpclient/commons-httpclient -->
 		<dependency>
 			<groupId>commons-httpclient</groupId>
