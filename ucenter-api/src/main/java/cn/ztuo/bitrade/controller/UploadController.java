@@ -20,9 +20,12 @@ import com.google.api.client.http.InputStreamContent;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import org.springframework.util.Assert;
 
 @Controller
 @Slf4j
@@ -65,5 +68,32 @@ public class UploadController {
         mr.setMessage(sourceService.getMessage("UPLOAD_SUCCESS"));
         log.debug("Upload successful, key: {}", key);
         return mr;
+    }
+    
+    @RequestMapping(value = "upload/local/image", method = RequestMethod.POST)
+    @ResponseBody
+    public MessageResult uploadLocalImage(HttpServletRequest request, HttpServletResponse response,
+                                        @RequestParam("file") MultipartFile file) throws IOException {
+        log.info(request.getSession().getServletContext().getResource("/").toString());
+        response.setCharacterEncoding("UTF-8");
+        response.setContentType("text/html; charset=UTF-8");
+        Assert.isTrue(ServletFileUpload.isMultipartContent(request), sourceService.getMessage("FORM_FORMAT_ERROR"));
+        Assert.isTrue(file != null, sourceService.getMessage("NOT_FIND_FILE"));
+        //验证文件类型
+        String fileName = file.getOriginalFilename();
+        String suffix = fileName.substring(fileName.lastIndexOf("."), fileName.length());
+        if (!allowedFormat.contains(suffix.trim().toLowerCase())) {
+            return MessageResult.error(sourceService.getMessage("FORMAT_NOT_SUPPORT"));
+        }
+        String result= UploadFileUtil.uploadFile(file,fileName);
+        if(result!=null){
+            MessageResult mr = new MessageResult(0, sourceService.getMessage("UPLOAD_SUCCESS"));
+            mr.setData(result);
+            return mr;
+        }else{
+            MessageResult mr = new MessageResult(0, sourceService.getMessage("FAILED_TO_WRITE"));
+            mr.setData(result);
+            return mr;
+        }
     }
 }
