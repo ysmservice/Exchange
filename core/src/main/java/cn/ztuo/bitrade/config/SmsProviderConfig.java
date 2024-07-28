@@ -9,6 +9,7 @@ import cn.ztuo.bitrade.vendor.provider.SMSProvider;
 import cn.ztuo.bitrade.vendor.provider.support.ChuangRuiSMSProvider;
 import cn.ztuo.bitrade.vendor.provider.support.EmaySMSProvider;
 import cn.ztuo.bitrade.vendor.provider.support.HuaXinSMSProvider;
+import cn.ztuo.bitrade.vendor.provider.support.NexmoSMSProvider;
 
 @Configuration
 public class SmsProviderConfig {
@@ -35,7 +36,8 @@ public class SmsProviderConfig {
 
     @Bean
     public SMSProvider getSMSProvider(@Value("${sms.driver:}") String driverName) {
-        return new ChuangRuiSMSProvider(gateway, username, password, sign,accessKey,accessSecret);
+        return new NexmoSMSProvider(accessKey,accessSecret,sign);
+//        return new ChuangRuiSMSProvider(gateway, username, password, sign,accessKey,accessSecret);
 //        if (StringUtils.isEmpty(driverName)) {
 //            return new ChuangRuiSMSProvider(gateway, username, password, sign,accessKey,accessSecret);
 //        }
