@@ -8,7 +8,7 @@
 	<packaging>pom</packaging>
 
 	<name>${project.artifactId}</name>
-	<description>数字货币交易系统父节点</description>
+	<description>数字$8D27$5E01交易系$7EDF父$8282点</description>
 	<url>https://bhuo.top/#/</url>
 	<modules>
 		<module>core</module>
@@ -40,7 +40,7 @@
 		<!-- spring -->
 		<spring-cloud.version>Edgware.RELEASE</spring-cloud.version>
 		<spring-boot_version>1.5.9.RELEASE</spring-boot_version>
-		<!-- 数据库连接 -->
+		<!-- 数据$5E93$8FDE接 -->
 		<druid_version>1.1.9</druid_version>
 		<mysql.version>8.0.11</mysql.version>
 		<!-- commons包 -->
@@ -122,7 +122,7 @@
 				<artifactId>spring-boot-starter-security</artifactId>
 				<version>${spring-boot_version}</version>
 			</dependency>
-			<!-- 发送邮件. -->
+			<!-- $53D1送$90AE件. -->
 			<dependency>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-starter-mail</artifactId>
@@ -133,7 +133,7 @@
 				<artifactId>junit</artifactId>
 				<version>${junit_version}</version>
 			</dependency>
-			<!-- commons依赖包 -->
+			<!-- commons依$8D56包 -->
 			<dependency>
 				<groupId>commons-codec</groupId>
 				<artifactId>commons-codec</artifactId>
@@ -286,7 +286,7 @@
 <dependency>
   <groupId>com.google.apis</groupId>
   <artifactId>google-api-services-drive</artifactId>
-  <version>v3-rev20210514-1.31.5</version>
+  <version>v3-rev110-1.23.0</version>
 </dependency>
 <dependency>
   <groupId>org.springframework.boot</groupId>
